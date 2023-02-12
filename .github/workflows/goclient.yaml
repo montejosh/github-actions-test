@@ -11,12 +11,16 @@ jobs:
     steps:
       - name: presubmit-run-info
         env:
-          PRESUBMIT_ID: github.event.push_event.push_id
-          PUSH_AUTHOR: github.event.actor.login
-          HEAD_COMMIT: github.event.push_event.head
-          REPO: github.event.repository.name
+          PRESUBMIT_ID: ${{ github.event.push_event.push_id }}
+          PUSH_AUTHOR: ${{ github.event.actor.login }}
+          HEAD_COMMIT: ${{ github.event.push_event.head }}
+          REPO: ${{ github.event.repository.name }}
         run: |
-          echo "Presubmit invoked by: ${PRESUBMIT_INVOKER}\nPresubmit Run: ${PRESUBMIT_ID}\nRepository: ${REPO}\nBranch Head: ${HEAD_COMMIT}\n"
+          echo "
+          Presubmit invoked by: ${PRESUBMIT_INVOKER}
+          Presubmit Run: ${PRESUBMIT_ID}
+          Repository: ${REPO}
+          Branch Head: ${HEAD_COMMIT}"
 
       - uses: actions/checkout@v3
 

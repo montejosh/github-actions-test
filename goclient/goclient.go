@@ -1,4 +1,4 @@
-// Package main does a simple print out based on the input in main. I'm using this purely for the purposes of testing github-actions
+// Package main does a simple print out based on the input in file. I'm using this purely for the purposes of testing github-actions
 package main
 
 import (
